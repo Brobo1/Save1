@@ -5,12 +5,18 @@ from pumpkins import *
 # resetDrone()
 
 while True: 
+	count = 0
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			goTo(i, j)
 			waterTile()
 			# plantPumpkin()
-			plantCarrot()
+			if count <= 10:
+				plantSunflower()
+			else:
+				plantCarrot()
+			
+			
 
 			# if i > 2:
 			#     planter(Entities.Pumpkin) 
@@ -20,5 +26,6 @@ while True:
 			#     planter(Entities.Carrot)
 			# else: 
 			#     planter(Entities.Grass)
+			count+= 1
 
 

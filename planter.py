@@ -1,5 +1,7 @@
 from utils import *
 
+sunflowerList = []
+
 def planter(plantType):
 	if (get_ground_type() != Grounds.Soil 
 		and (plantType == Entities.Carrot
@@ -16,11 +18,22 @@ def planter(plantType):
 	if get_entity_type() != plantType:
 		plant(plantType)
 
+
 def plantCarrot(): 
 	tiller(Grounds.Soil)
+
 	if can_harvest():
 		harvest()
+
 	plant(Entities.Carrot)
 
+
 def plantSunflower():
+	global sunflowerList
+
 	tiller(Grounds.Soil)
+
+	if can_harvest():
+		sunflowerList.append({"x":get_pos_x(), "y":get_pos_y(), "pet":measure()})
+	print(sunflowerList[0]["pet"])
+	plant(Entities.Sunflower)
