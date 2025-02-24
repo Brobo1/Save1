@@ -43,7 +43,9 @@ def plantSunflower():
 		for petals in sunflowerList:
 			if petals["pet"] > flowerToPick["pet"]:
 				flowerToPick = petals
-		quick_print(flowerToPick)
 		sunflowerList = []
+
+		goTo(flowerToPick["x"], flowerToPick["y"])
+		harvest()
 
 	plant(Entities.Sunflower)
