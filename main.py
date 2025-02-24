@@ -9,13 +9,17 @@ while True:
 		for j in range(get_world_size()):
 			goTo(i, j)
 			waterTile()
-			plantPumpkin()
-			# if count < get_world_size():
-			# 	plantSunflower()
+			if count < get_world_size():
+				plantSunflower()
+			elif count < get_world_size()*4:
+				if (i+j) % 2 == 0 and count < get_world_size()*3:
+					plantTree()
+				else:
+					plantCactus()
+			else:
+				plantPumpkin()
 			# elif (i+j) % 2 == 0:
 			# 	plantTree()
-			# elif count < get_world_size()*4:
-			# 	plantCactus()
 			# else:
 			# 	plantCarrot()
 
