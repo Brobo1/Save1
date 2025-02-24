@@ -35,5 +35,5 @@ def plantSunflower():
 
 	if can_harvest():
 		sunflowerList.append({"x":get_pos_x(), "y":get_pos_y(), "pet":measure()})
-	print(sunflowerList[0]["pet"])
+	quick_print(sunflowerList[sunflowerList.len()-1])
 	plant(Entities.Sunflower)

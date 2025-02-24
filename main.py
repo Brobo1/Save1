@@ -11,7 +11,7 @@ while True:
 			goTo(i, j)
 			waterTile()
 			# plantPumpkin()
-			if count <= 10:
+			if count < 10:
 				plantSunflower()
 			else:
 				plantCarrot()
