@@ -11,6 +11,8 @@ while True:
 			waterTile()
 			if count < get_world_size():
 				plantSunflower()
+			elif count < get_world_size()*2:
+				plantCarrot()
 			elif count < get_world_size()*4:
 				if (i+j) % 2 == 0 and count < get_world_size()*3:
 					plantTree()
