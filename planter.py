@@ -59,3 +59,7 @@ def plantCactus():
 		harvest()
 	plant(Entities.Cactus)
 
+def plantPumpkin():
+	if can_harvest():
+		harvest()
+	plant(Entities.Pumpkin)

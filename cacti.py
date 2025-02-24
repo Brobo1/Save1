@@ -1,6 +1,5 @@
 from utils import *
 from planter import *
-from pumpkins import *
 
 def waterTile():
 	if get_water() < 0.90:
