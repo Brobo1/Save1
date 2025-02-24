@@ -40,16 +40,22 @@ def plantSunflower():
 	tiller(Grounds.Soil)
 
 	if can_harvest():
-		sunflowerList.append({"x":get_pos_x(), "y":get_pos_y(), "pet":measure()})
+	# 	sunflowerList.append({"x":get_pos_x(), "y":get_pos_y(), "pet":measure()})
 	
-	if len(sunflowerList) >= 10:
-		flowerToPick = sunflowerList[0]
-		for petals in sunflowerList:
-			if petals["pet"] > flowerToPick["pet"]:
-				flowerToPick = petals
-		sunflowerList = []
+	# if len(sunflowerList) >= 10:
+	# 	flowerToPick = sunflowerList[0]
+	# 	for petals in sunflowerList:
+	# 		if petals["pet"] > flowerToPick["pet"]:
+	# 			flowerToPick = petals
+	# 	sunflowerList = []
 
-		goTo(flowerToPick["x"], flowerToPick["y"])
+	# 	goTo(flowerToPick["x"], flowerToPick["y"])
 		harvest()
 
 	plant(Entities.Sunflower)
+
+def plantCactus(): 
+	if can_harvest():
+		harvest()
+	plant(Entities.Cactus)
+

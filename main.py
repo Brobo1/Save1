@@ -11,10 +11,12 @@ while True:
 			goTo(i, j)
 			waterTile()
 			# plantPumpkin()
-			if count < 10:
+			if count < get_world_size():
 				plantSunflower()
 			elif (i+j) % 2 == 0:
 				plantTree()
+			elif count < get_world_size()*4:
+				plantCactus()
 			else:
 				plantCarrot()
 			
