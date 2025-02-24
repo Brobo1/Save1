@@ -13,6 +13,8 @@ while True:
 			# plantPumpkin()
 			if count < 10:
 				plantSunflower()
+			elif (i+j) % 2 == 0:
+				plantTree()
 			else:
 				plantCarrot()
 			

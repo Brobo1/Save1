@@ -18,6 +18,12 @@ def planter(plantType):
 		plant(plantType)
 
 
+def plantTree(): 
+	if can_harvest():
+		harvest()
+	plant(Entities.Tree)
+
+
 def plantCarrot(): 
 	tiller(Grounds.Soil)
 
@@ -28,7 +34,6 @@ def plantCarrot():
 
 
 sunflowerList = []
-
 def plantSunflower():
 	global sunflowerList
  
@@ -36,7 +41,6 @@ def plantSunflower():
 
 	if can_harvest():
 		sunflowerList.append({"x":get_pos_x(), "y":get_pos_y(), "pet":measure()})
-
 	
 	if len(sunflowerList) >= 10:
 		flowerToPick = sunflowerList[0]
