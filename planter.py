@@ -1,3 +1,5 @@
+from utils import *
+
 def planter(plantType):
 	if (get_ground_type() != Grounds.Soil 
 		and (plantType == Entities.Carrot
@@ -13,3 +15,12 @@ def planter(plantType):
 
 	if get_entity_type() != plantType:
 		plant(plantType)
+
+def plantCarrot(): 
+	tiller(Grounds.Soil)
+	if can_harvest():
+		harvest()
+	plant(Entities.Carrot)
+
+def plantSunflower():
+	tiller(Grounds.Soil)

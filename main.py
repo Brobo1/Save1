@@ -9,7 +9,9 @@ while True:
 		for j in range(get_world_size()):
 			goTo(i, j)
 			waterTile()
-			plantPumpkin()
+			# plantPumpkin()
+			plantCarrot()
+
 			# if i > 2:
 			#     planter(Entities.Pumpkin) 
 			# elif (j + i) % 2 == 0: 
