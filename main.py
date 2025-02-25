@@ -10,7 +10,7 @@ while True:
 			goTo(i, j)
 			waterTile()
 			plantBush()
-			# fertilize()
+			fertilize()
 			# if count < get_world_size():
 			# 	plantSunflower()
 			# elif count < get_world_size()*2:
