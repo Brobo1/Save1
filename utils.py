@@ -9,7 +9,7 @@ def tiller(groundType):
 			till()
 
 def waterTile():
-	if get_water() < 0.90:
+	if get_water() < 0.80:
 			use_item(Items.Water)
 
 def goTo(x, y):
