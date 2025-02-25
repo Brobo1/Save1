@@ -1,18 +1,28 @@
-from utils import *
-from planter import *
 
 def makeMaze():
+	harvest()
 	plant(Entities.Bush)
-	use_item(Items.Weird_Substance, 3)
+	use_item(Items.Weird_Substance, get_world_size())
 
 def pathFinder():
 	dirs = [North, East, South, West]
-	moveIndex = 0
-	while get_entity_type() != Entities.Treasure:
-		move(dirs[moveIndex])
-	quick_print(move(dirs[1]))
+	curDirIndex = 0
 
-# makeMaze()
+	while get_entity_type() != Entities.Treasure:
+		dirIndex = (curDirIndex-1)%4
+
+		if move(dirs[dirIndex]):
+			curDirIndex = dirIndex
+		elif move(dirs[curDirIndex]):
+			pass
+		else:
+			curDirIndex = (curDirIndex+1)%4
+		quick_print(dirIndex)
+	
+	if get_entity_type() == Entities.Treasure:
+		harvest()
+
+makeMaze()
 pathFinder()
 
 # goTo(0,0)
