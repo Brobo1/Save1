@@ -47,7 +47,5 @@ def goTo(x, y):
 			move(South)
 			dy += 1
 
-goTo(5,5) 
-goTo(0,0)
-
-# resetDrone()
+def fertilize():
+	use_item(Items.Fertilizer)

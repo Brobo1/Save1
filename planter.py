@@ -18,6 +18,17 @@ def planter(plantType):
 		plant(plantType)
 
 
+def plantGrass():
+	tiller(Grounds.Grassland)
+	if can_harvest():
+		harvest()
+
+def plantBush():
+	tiller(Grounds.Soil)
+	if can_harvest():
+		harvest()
+	plant(Entities.Bush)
+
 def plantTree(): 
 	if can_harvest():
 		harvest()
@@ -64,7 +75,3 @@ def plantPumpkin():
 		harvest()
 	plant(Entities.Pumpkin)
 
-def plantGrass():
-	tiller(Grounds.Grassland)
-	if can_harvest():
-		harvest()
