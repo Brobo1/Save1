@@ -17,12 +17,12 @@ def pathFinder():
 			pass
 		else:
 			curDirIndex = (curDirIndex+1)%4
-		quick_print(dirIndex)
 	
 	if get_entity_type() == Entities.Treasure:
 		harvest()
 
-makeMaze()
-pathFinder()
+while True:
+	makeMaze()
+	pathFinder()
 
 # goTo(0,0)
