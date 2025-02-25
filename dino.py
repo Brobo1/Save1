@@ -31,5 +31,6 @@ def dinoBones():
 			turnIndex += 1 
 
 
-change_hat(Hats.Dinosaur_Hat)
-dinoBones()
+# change_hat(Hats.Dinosaur_Hat)
+# dinoBones()
+
