@@ -24,10 +24,12 @@ def dinoBones():
 
 		turn = not turn
 
-		if get_pos_x() == get_world_size()-1 and get_pos_y() == get_world_size()-1:
-			turnIndex += 1
-		elif get_pos_x() == 0 and get_pos_y() == 0:
-			turnIndex +=1
+		if (get_pos_x() == get_world_size()-1 and get_pos_y() == get_world_size()-1
+			or get_pos_x() == 0 and get_pos_y() == 0
+			or get_pos_x() == get_world_size()-1 and get_pos_y() == 0
+			or get_pos_x() == 0 and get_pos_y() == get_world_size()-1):
+			turnIndex += 1 
+
 
 change_hat(Hats.Dinosaur_Hat)
 dinoBones()
