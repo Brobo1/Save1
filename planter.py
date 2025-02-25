@@ -63,3 +63,8 @@ def plantPumpkin():
 	if can_harvest():
 		harvest()
 	plant(Entities.Pumpkin)
+
+def plantGrass():
+	tiller(Grounds.Grassland)
+	if can_harvest():
+		harvest()

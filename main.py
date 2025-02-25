@@ -13,17 +13,19 @@ while True:
 				plantSunflower()
 			elif count < get_world_size()*2:
 				plantCarrot()
-			elif count < get_world_size()*4:
-				if (i+j) % 2 == 0 and count < get_world_size()*3:
+			else:
+				if (i+j) % 2 == 0:
 					plantTree()
 				else:
-					plantCactus()
-			else:
-				plantPumpkin()
-			# elif (i+j) % 2 == 0:
-			# 	plantTree()
+					plantGrass()
+			# elif count < get_world_size()*4:
+			# 	if (i+j) % 2 == 0 and count < get_world_size()*3:
+			# 		plantTree()
+			# 	else:
+			# 		plantCactus()
 			# else:
-			# 	plantCarrot()
+			# 	plantPumpkin()
+
 
 			count+= 1
 
