@@ -7,42 +7,52 @@ def dinoBones():
 	turn = True
 	turnIndex = 0
 	size = get_world_size()-1
+	apples = []
 
 	change_hat(Hats.Dinosaur_Hat)
 	goTo(0,0)
 	change_hat(Hats.Dinosaur_Hat)
 
-	while True:
+	while len(apples) <= 32:
 
+		quick_print(len(apples))
 		while get_pos_y() < size and move(vDir[0]):
-			pass
+			addApples(apples)
 
 		while get_pos_x() < size and move(hDir[0]):
-			pass
+			addApples(apples)
 
 		move(vDir[1])
+		addApples(apples)
 
-		while get_pos_x() != 0 and get_pos_y() !=0:
-			
+		while get_pos_x() != 0 and get_pos_y() !=0 and len(apples) <= 32:
+			quick_print(len(apples))
+
 			while get_pos_x() > 1 and move(hDir[1]): 
-				pass
+				addApples(apples)
 
 			move(vDir[1])
+			addApples(apples)
 
 			while get_pos_x() < size and move(hDir[0]):
-				pass 
+				addApples(apples) 
 
 			move(vDir[1])
+			addApples(apples)
 
 		while get_pos_x() != 0 and move(hDir[1]):
-			pass
+			addApples(apples)
 
 
-
+def addApples(apples):
+	if measure() != None:
+		apples.append(measure())
 
 
 # change_hat(Hats.Dinosaur_Hat)
-dinoBones()
+
+while True:
+	dinoBones()
 
 
 
