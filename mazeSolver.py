@@ -2,7 +2,7 @@
 def makeMaze():
 	harvest()
 	plant(Entities.Bush)
-	use_item(Items.Weird_Substance, get_world_size())
+	use_item(Items.Weird_Substance, get_world_size() * num_unlocked(Unlocks.Mazes))
 
 def pathFinder():
 	dirs = [North, East, South, West]
