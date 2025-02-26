@@ -13,30 +13,29 @@ def dinoBones():
 	change_hat(Hats.Dinosaur_Hat)
 
 	while True:
-		
 
-		while get_pos_y() < size:
-			move(vDir[0])
+		while get_pos_y() < size and move(vDir[0]):
+			pass
 
-		while get_pos_x() < size:
-			move(hDir[0])
+		while get_pos_x() < size and move(hDir[0]):
+			pass
 
 		move(vDir[1])
 
 		while get_pos_x() != 0 and get_pos_y() !=0:
 			
-			while get_pos_x() > 1: 
-				move(hDir[1])
+			while get_pos_x() > 1 and move(hDir[1]): 
+				pass
 
 			move(vDir[1])
 
-			while get_pos_x() < size:
-				move(hDir[0])
+			while get_pos_x() < size and move(hDir[0]):
+				pass 
 
 			move(vDir[1])
 
-		while get_pos_x() != 0:
-			move(hDir[1])
+		while get_pos_x() != 0 and move(hDir[1]):
+			pass
 
 
 
