@@ -11,13 +11,12 @@ def dinoBones():
 	size = get_world_size()-1
 	apples = []
 
-	quick_print(gridType)
 
 	change_hat(Hats.Dinosaur_Hat)
 	goTo(0,0)
 	change_hat(Hats.Dinosaur_Hat)
 
-	while len(apples) <= 32:
+	while True:
 
 		quick_print(len(apples))
 
@@ -31,7 +30,6 @@ def dinoBones():
 			else: 
 				while get_pos_y() < size and move(vDir[0]):
 					addApples(apples)
-			lapIndex += 1
 
 		while get_pos_x() < size and move(hDir[0]):
 			addApples(apples)
@@ -41,8 +39,12 @@ def dinoBones():
 			addApples(apples)
 		else:
 			move(vDir[1])
+			addApples(apples)
 			move(vDir[1])
 			addApples(apples)
+
+		if not gridType:
+			lapIndex += 1
 
 		while get_pos_x() != 0 and get_pos_y() !=0 and len(apples) <= 32:
 			quick_print(len(apples))
@@ -68,6 +70,7 @@ def addApples(apples):
 		apples.append(measure())
 
 
+# change_hat(Hats.Dinosaur_Hat)
 
 while True:
 	dinoBones()
