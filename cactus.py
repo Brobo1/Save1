@@ -44,3 +44,4 @@ def plantCactus():
 			if can_harvest():
 				harvest()
 			plant(Entities.Cactus)
+			fertilize()
