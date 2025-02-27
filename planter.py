@@ -65,11 +65,7 @@ def plantSunflower():
 
 	plant(Entities.Sunflower)
 
-def plantCactus():
-	tiller(Grounds.Soil)
-	if can_harvest():
-		harvest()
-	plant(Entities.Cactus)
+
 
 def plantPumpkin():
 	if can_harvest():
