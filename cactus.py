@@ -1,28 +1,23 @@
 from utils import *
 
 def sortCactus():
-
-
 	for i in range(get_world_size()):
 		for j in range(get_world_size()):
 			goTo(i,j)
 
-			cactusUnder = measure()
+			cactusCenter = measure()
 			cactusRight = measure(East)
-
-			if cactusUnder > cactusRight:
-				swap(East)
-
-	for i in range(get_world_size()):
-		for j in range(get_world_size()):
-			goTo(i,j)
-
-			cactusUnder = measure()
 			cactusOver = measure(North)
 
-			if cactusUnder > cactusOver:
+			if cactusCenter > cactusRight:
+				swap(East)
+			
+			if cactusCenter > cactusOver:
 				swap(North)
-	quick_print(cactusUnder, cactusRight)
 
-while True:
-	sortCactus()
+
+# while True:
+# 	sortCactus()
+
+goTo(0,0)
+harvest()
