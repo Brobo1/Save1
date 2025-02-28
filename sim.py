@@ -6,6 +6,6 @@ quick_print(
 		Items.Power: 1000000},
 		{},
 		-1,
-		1
+		0.1
 	)
 )
