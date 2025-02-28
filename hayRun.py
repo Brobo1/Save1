@@ -14,13 +14,16 @@ while num_items(Items.Hay) <= 100000:
 
 	if can_harvest():
 		grow, (x1, y1) = get_companion()
+		# quick_print((x1, y1), grow)
+
 		if (grow == Entities.Carrot):
 			if num_items(Items.Wood) >= 12:
 				goTo(x1,y1)
 				tiller(Grounds.Soil)
 				plant(grow)
-			else:	
+			else:
 				harvest()
+				
 		else:
 			goTo(x1,y1)
 			harvest()

@@ -1,3 +1,5 @@
+worldSize = get_world_size()
+
 def resetDrone():
 	while get_pos_x() != 0:
 		move(West)
@@ -13,23 +15,26 @@ def waterTile():
 			use_item(Items.Water)
 
 def goTo(x, y):
-	if (x < 0 or x >= get_world_size() or y < 0 or y >= get_world_size()):
-		return print("Out of bounds")
+	# if (x < 0 or x >= get_world_size() or y < 0 or y >= get_world_size()):
+	# 	return print("Out of bounds")
+	
+	# if (x == get_pos_x() and y == get_pos_y()):
+	# 	return 
     
 	dx = x - get_pos_x()
 	dy = y - get_pos_y()
 
-	if abs(dx) > get_world_size()/2:
+	if abs(dx) > worldSize/2:
 		if dx > 0:
-			dx -= get_world_size()
+			dx -= worldSize
 		else:
-			dx += get_world_size()
+			dx += worldSize
     
-	if abs(dy) > get_world_size()/2:
+	if abs(dy) > worldSize/2:
 		if dy > 0: 
-			dy -= get_world_size()
+			dy -= worldSize
 		else:
-			dy += get_world_size()
+			dy += worldSize
 
 	while dx != 0:
 		if dx > 0:
