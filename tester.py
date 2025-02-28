@@ -1,1 +1,1 @@
-quick_print(measure())
+till()
