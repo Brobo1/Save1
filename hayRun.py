@@ -27,10 +27,10 @@ while num_items(Items.Hay) <= 100000:
 					tiller(Grounds.Soil)
 					plant(grow)
 					compDict[x1,y1] = grow
-
+				else: 
+					quick_print("Exists")
 			else:
 				harvest()
-				 
 		else:
 			if (x1,y1) not in compDict:
 				goTo(x1,y1)
@@ -41,6 +41,8 @@ while num_items(Items.Hay) <= 100000:
 				harvest()
 				plant(grow)
 				compDict[x1,y1] = grow
+			else: 
+				quick_print("Exists")
 
 
 		goTo(x2,y2)
