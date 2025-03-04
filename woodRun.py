@@ -18,15 +18,10 @@ while num_items(Items.Wood) <= 100000:
 		if (grow == Entities.Carrot):
 			if num_items(Items.Wood) >= 12:
 
-				if (x1,y1) not in compDict:
+				if (x1,y1) not in compDict or compDict[x1,y1] != grow:
 					goTo(x1,y1)
 					tiller(Grounds.Soil)
 					plant(grow)
-					compDict[x1,y1] = grow
-				elif compDict[x1,y1] != grow:
-					goTo(x1,y1)
-					tiller(Grounds.Soil)
-					plant(grow) 
 					compDict[x1,y1] = grow
 				else: 
 					quick_print("Exists")
@@ -34,24 +29,15 @@ while num_items(Items.Wood) <= 100000:
 				harvest()
 				plant(Entities.Tree)
 		elif grow == Entities.Grass:
-			if (x1,y1) not in compDict:
-				goTo(x1,y1)
-				harvest()
-				tiller(Grounds.Grassland)
-				compDict[x1,y1] = grow
-			elif compDict[x1,y1] != grow:
+			if (x1,y1) not in compDict or compDict[x1,y1] != grow:
 				goTo(x1,y1)
 				harvest()
 				tiller(Grounds.Grassland)
 				compDict[x1,y1] = grow
 			else: 
-				quick_print("Exists")
+				quick_print("Exists") 
 		else:
-			if (x1,y1) not in compDict:
-				goTo(x1,y1)
-				plant(grow)
-				compDict[x1,y1] = grow
-			elif compDict[x1,y1] != grow:
+			if (x1,y1) not in compDict or compDict[x1,y1] != grow:
 				goTo(x1,y1)
 				harvest()
 				plant(grow)
