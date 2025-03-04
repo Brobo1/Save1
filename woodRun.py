@@ -5,11 +5,12 @@ x2,y2 = 0, 0
 compDict = {}
 
 while num_items(Items.Wood) <= 100000:
+	if (x2+y2)%2 == 0:
+		use_item(Items.Water)
 
 	if (get_entity_type() != Entities.Tree):
 		if (x2+y2)%2 == 0:
 			harvest()
-			use_item(Items.Water)
 			plant(Entities.Tree)
 
 	if can_harvest() and (x2+y2)%2 == 0:
@@ -20,6 +21,7 @@ while num_items(Items.Wood) <= 100000:
 
 				if (x1,y1) not in compDict or compDict[x1,y1] != grow:
 					goTo(x1,y1)
+					harvest()
 					tiller(Grounds.Soil)
 					plant(grow)
 					compDict[x1,y1] = grow
