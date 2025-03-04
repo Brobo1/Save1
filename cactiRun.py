@@ -4,10 +4,6 @@ from utils import *
 x2,y2 = 0, 0
 compDict = {}
 
-
-
-
-
 def sortCactus():
 
 	while True:
