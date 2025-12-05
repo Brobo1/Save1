@@ -65,10 +65,3 @@ def plantSunflower():
 
 	plant(Entities.Sunflower)
 
-
-
-def plantPumpkin():
-	if can_harvest():
-		harvest()
-	plant(Entities.Pumpkin)
-

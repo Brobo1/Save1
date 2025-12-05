@@ -2,13 +2,14 @@ from utils import *
 from planter import *
 from cactus import *
 
+Size = get_world_size()
 # resetDrone()
-while num_items(Items.Hay) <= 100000: 
-	for i in range(2):
-		for j in range(get_world_size()):
-
+while True: 
+	for i in range(Size):
+		for j in range(Size):
 			goTo(i, j)
-			harvest()
+			tiller(Grounds.Soil)
+			#harvest()
 
 
 # while True:

@@ -20,7 +20,7 @@ def goTo(x, y):
 	
 	# if (x == get_pos_x() and y == get_pos_y()):
 	# 	return 
-    
+	
 	dx = x - get_pos_x()
 	dy = y - get_pos_y()
 
@@ -29,7 +29,7 @@ def goTo(x, y):
 			dx -= worldSize
 		else:
 			dx += worldSize
-    
+	
 	if abs(dy) > worldSize/2:
 		if dy > 0: 
 			dy -= worldSize
