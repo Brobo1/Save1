@@ -12,7 +12,7 @@ size = get_world_size()
 		
 
 
-while True:
+while True: 
 	resetDrone()
 	pumpkinDict = {}
 	for x in range(size):
