@@ -10,6 +10,9 @@ def tiller(groundType):
 	if groundType != get_ground_type():
 			till()
 
+def entityAmount(item):
+	return num_items(item)
+
 def waterTile():
 	if get_water() < 0.80:
 			use_item(Items.Water)

@@ -1,35 +1,42 @@
 from utils import *
-from planter import *
-from cactus import *
 
-count = 1
+
 size = get_world_size()
 totalSquares = size*size
 pumpkinDict = {}
 
 
 
-def plantPumpkin():
-	global count
+
+def plantRow():
 	#quick_print(count)
-	if count >= totalSquares:
-		harvest()
-		count = 1
-	if get_entity_type() == Entities.Pumpkin:
-		count += 1
-	else:
-		plant(Entities.Pumpkin)
+	count = 1
+	while count <= size:
+		# if count >= size:
+		# 	harvest()
+		tiller(Grounds.Soil)
+		waterTile()
+		if get_entity_type() == Entities.Pumpkin:
+			count += 1
+		elif get_entity_type() == Entities.Dead_Pumpkin: 
+			plant(Entities.Pumpkin)
+			count = 1
+		else: 
+			count = 1
+			harvest()
+			plant(Entities.Pumpkin)
+		move(East)
 	
 	
 	
 
 resetDrone()
+
+# goTo(0,0)
 while True:
-	count = 1
-	for i in range(size):
-		for j in range(size):
-			waterTile()
-			plantPumpkin()
-			goTo(i, j)
-			#tiller(Grounds.Soil)
-			
+	for y in range(size+1):
+		
+		if spawn_drone(plantRow):
+			goTo(0, y)
+
+	harvest()

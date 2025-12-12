@@ -7,17 +7,29 @@ from cactus import *
 #set_world_size(3)
 
 size = get_world_size()
+sizeSqrt = size * size
+carrotsPerPumpkin = 32
 
 
 		
 
-
+ 
 while True: 
 	resetDrone()
+	
+	while entityAmount(Items.Carrot) < 1000000:
+		for x in range(2):
+			for y in range(size):
+				if can_harvest():
+					harvest()
+				goTo(x, y)
+				waterTile()
+				tiller(Grounds.Soil)
+				plant(Entities.Carrot)
+
 	pumpkinDict = {}
 	for x in range(size):
 		for y in range(size):
-			quick_print(x, y)
 			pumpkinDict[x, y] = None
 	while len(pumpkinDict) != 0:
 		for (x, y) in list(pumpkinDict):

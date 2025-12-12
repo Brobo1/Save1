@@ -1,5 +1,6 @@
 from utils import *
 
+size = get_world_size()
 
 def dinoBones():
 	hDir = [East, West]
@@ -10,8 +11,8 @@ def dinoBones():
 	gridType = get_world_size() % 2 == 0
 	size = get_world_size()-1
 	apples = []
-	tailLength = 97
-
+	tailLength = size * size
+  
 
 	change_hat(Hats.Dinosaur_Hat)
 	goTo(0,0)
